@@ -1,0 +1,28 @@
+{
+  "name": "reliability-critic-server",
+  "version": "0.0.1",
+  "description": "API service for checking site reliability",
+  "scripts": {
+    "test": "env PORT=3000 nodemon src/server.ts",
+    "start": "node dist/server.js",
+    "deploy": "webservice --backend kubernetes node16 restart",
+    "logs": "kubectl logs -f deploy/reliability-critic"
+  },
+  "author": "Siddharth VP",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siddharthvp/reliability-critic.git"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "eslint": "^8.34.0",
+    "jest": "^29.4.2",
+    "nodemon": "^2.0.20",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1"
+  }
+}
